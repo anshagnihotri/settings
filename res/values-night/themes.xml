@@ -18,12 +18,12 @@
 <resources>
 
     <style name="Theme.Settings.Home" parent="Theme.Settings.HomeBase">
-        <item name="colorPrimary">@*android:color/primary_device_default_settings</item>
-        <item name="colorPrimaryDark">@*android:color/primary_dark_device_default_settings</item>
-        <item name="android:colorBackground">@android:color/system_surface_container_dark</item>
+        <item name="colorPrimary">@color/ds_color_accent_filled</item>
+        <item name="colorPrimaryDark">@color/ds_color_bg</item>
+        <item name="android:colorBackground">@color/ds_color_bg</item>
         <!-- Homepage should follow device default design, the values is same as device default theme.-->
-        <item name="android:navigationBarColor">@android:color/black</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="Theme.SubSettings" parent="Theme.SubSettings.Base"/>

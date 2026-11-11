@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+-->
+<resources>
+
+    <!-- ================================================================== -->
+    <!-- SHAPE & CORNER RADII                                               -->
+    <!-- ================================================================== -->
+    <dimen name="ds_radius_card">16dp</dimen>
+    <dimen name="ds_radius_control">14dp</dimen>
+    <dimen name="ds_radius_dialog">22dp</dimen>
+    <dimen name="ds_radius_sheet">24dp</dimen>
+    <dimen name="ds_radius_pill">999dp</dimen>
+    <dimen name="ds_border_width">1dp</dimen>
+    <dimen name="ds_divider_height">1px</dimen>
+
+    <!-- ================================================================== -->
+    <!-- LAYOUT GRID & GROUP SPACING (4dp GRID)                             -->
+    <!-- ================================================================== -->
+    <dimen name="ds_screen_gutter">16dp</dimen>
+    <dimen name="ds_group_gap">24dp</dimen>
+    <dimen name="ds_section_label_to_card_gap">8dp</dimen>
+    <dimen name="ds_section_label_padding_start">32dp</dimen> <!-- 16dp gutter + 16dp card inset -->
+
+    <!-- ================================================================== -->
+    <!-- PREFERENCE ROW GEOMETRY                                            -->
+    <!-- ================================================================== -->
+    <dimen name="ds_row_min_height">52dp</dimen>
+    <dimen name="ds_min_touch_target">48dp</dimen>
+    <dimen name="ds_row_padding_horizontal">16dp</dimen>
+    <dimen name="ds_row_padding_vertical">10dp</dimen>
+
+    <!-- Icon + Text + Inset Divider Math:
+         16dp (row start padding) + 24dp (icon box) + 12dp (icon-to-text gap)
+         = 52dp internal text & divider inset from card start edge
+         = 68dp from screen start edge (16dp gutter + 52dp) -->
+    <dimen name="ds_icon_box_size">24dp</dimen>
+    <dimen name="ds_icon_size">22dp</dimen>
+    <dimen name="ds_icon_to_text_gap">12dp</dimen>
+    <dimen name="ds_divider_inset_start">52dp</dimen>
+    <dimen name="ds_divider_screen_inset_start">68dp</dimen>
+    <dimen name="ds_chevron_size">16dp</dimen>
+    <dimen name="ds_chevron_margin_start">8dp</dimen>
+
+    <!-- ================================================================== -->
+    <!-- TOP BAR & SEARCH BAR                                               -->
+    <!-- ================================================================== -->
+    <dimen name="ds_back_button_size">36dp</dimen>
+    <dimen name="ds_back_button_icon_size">20dp</dimen>
+    <dimen name="ds_search_bar_height">44dp</dimen>
+    <dimen name="ds_search_bar_padding_horizontal">14dp</dimen>
+
+    <!-- ================================================================== -->
+    <!-- TYPOGRAPHY SIZES & LINE HEIGHTS                                    -->
+    <!-- ================================================================== -->
+    <dimen name="ds_text_size_large_title">32sp</dimen>
+    <dimen name="ds_line_height_large_title">38sp</dimen>
+
+    <dimen name="ds_text_size_title">20sp</dimen>
+    <dimen name="ds_line_height_title">26sp</dimen>
+
+    <dimen name="ds_text_size_row_label">16sp</dimen>
+    <dimen name="ds_line_height_row_label">22sp</dimen>
+
+    <dimen name="ds_text_size_row_value">15sp</dimen>
+    <dimen name="ds_line_height_row_value">20sp</dimen>
+
+    <dimen name="ds_text_size_section_label">13sp</dimen>
+    <dimen name="ds_line_height_section_label">18sp</dimen>
+
+    <dimen name="ds_text_size_caption">12sp</dimen>
+    <dimen name="ds_line_height_caption">16sp</dimen>
+
+</resources>
+

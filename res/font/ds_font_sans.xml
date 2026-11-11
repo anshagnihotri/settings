@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+
+  UI Text Font Family: Inter Variable (optical size 16pt)
+  Requires res/font/inter_variable.ttf (added in Step 6).
+  Note: Minikin automatically falls back to /system/fonts/NotoSansDevanagari-VF.ttf
+  at the matching android:fontWeight (400, 500, 600) for Devanagari script.
+-->
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <font
+        android:font="@font/inter_variable"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:fontVariationSettings="'wght' 400, 'opsz' 16" />
+
+    <font
+        android:font="@font/inter_variable"
+        android:fontStyle="normal"
+        android:fontWeight="500"
+        android:fontVariationSettings="'wght' 500, 'opsz' 16" />
+
+    <font
+        android:font="@font/inter_variable"
+        android:fontStyle="normal"
+        android:fontWeight="600"
+        android:fontVariationSettings="'wght' 600, 'opsz' 20" />
+
+    <font
+        android:font="@font/inter_variable"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        android:fontVariationSettings="'wght' 700, 'opsz' 20" />
+
+</font-family>
+

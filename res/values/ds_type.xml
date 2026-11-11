@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+-->
+<resources>
+
+    <string name="ds_font_family_sans" translatable="false">@font/ds_font_sans</string>
+    <string name="ds_font_family_display" translatable="false">@font/ds_font_display</string>
+
+    <!-- ================================================================== -->
+    <!-- 1. CORE DESIGN SYSTEM TYPOGRAPHY TOKENS                            -->
+    <!-- Note: fallbackLineSpacing="true" prevents clipping of tall scripts  -->
+    <!-- (such as Devanagari above-base matras and below-base ukar/rukar).  -->
+    <!-- ================================================================== -->
+
+    <!-- Large Title: 32sp / 38sp, w600, tracking -0.5px (-0.016em), Display opsz=32 -->
+    <style name="DsText.LargeTitle" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:fontFamily">@font/ds_font_display</item>
+        <item name="fontFamily">@font/ds_font_display</item>
+        <item name="android:textSize">@dimen/ds_text_size_large_title</item>
+        <item name="android:lineHeight">@dimen/ds_line_height_large_title</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:fontVariationSettings">'wght' 600, 'opsz' 32</item>
+        <item name="android:letterSpacing">-0.016</item>
+        <item name="android:textColor">@color/ds_color_text_primary</item>
+        <item name="android:fallbackLineSpacing">true</item>
+    </style>
+
+    <!-- Collapsed Top Bar / Dialog Title: 20sp / 26sp, w600 -->
+    <style name="DsText.Title" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:fontFamily">@font/ds_font_sans</item>
+        <item name="fontFamily">@font/ds_font_sans</item>
+        <item name="android:textSize">@dimen/ds_text_size_title</item>
+        <item name="android:lineHeight">@dimen/ds_line_height_title</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:fontVariationSettings">'wght' 600, 'opsz' 20</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/ds_color_text_primary</item>
+        <item name="android:fallbackLineSpacing">true</item>
+    </style>
+
+    <!-- Row Label: 16sp / 22sp, w500 -->
+    <style name="DsText.RowLabel" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:fontFamily">@font/ds_font_sans</item>
+        <item name="fontFamily">@font/ds_font_sans</item>
+        <item name="android:textSize">@dimen/ds_text_size_row_label</item>
+        <item name="android:lineHeight">@dimen/ds_line_height_row_label</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:fontVariationSettings">'wght' 500, 'opsz' 16</item>
+        <item name="android:letterSpacing">-0.005</item>
+        <item name="android:textColor">@color/ds_color_text_primary</item>
+        <item name="android:fallbackLineSpacing">true</item>
+    </style>
+
+    <!-- Row Value / Summary: 15sp / 20sp, w400, text-secondary -->
+    <style name="DsText.RowValue" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:fontFamily">@font/ds_font_sans</item>
+        <item name="fontFamily">@font/ds_font_sans</item>
+        <item name="android:textSize">@dimen/ds_text_size_row_value</item>
+        <item name="android:lineHeight">@dimen/ds_line_height_row_value</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:fontVariationSettings">'wght' 400, 'opsz' 15</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textColor">@color/ds_color_text_secondary</color>
+        <item name="android:fallbackLineSpacing">true</item>
+    </style>
+
+    <!-- Section Label (PreferenceCategory Header): 13sp / 18sp, w500, sentence-case, text-secondary -->
+    <style name="DsText.SectionLabel" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:fontFamily">@font/ds_font_sans</item>
+        <item name="fontFamily">@font/ds_font_sans</item>
+        <item name="android:textSize">@dimen/ds_text_size_section_label</item>
+        <item name="android:lineHeight">@dimen/ds_line_height_section_label</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:fontVariationSettings">'wght' 500, 'opsz' 14</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/ds_color_text_secondary</item>
+        <item name="android:fallbackLineSpacing">true</item>
+    </style>
+
+    <!-- Caption / Footer: 12sp / 16sp, w400, text-tertiary (#6B6B73 light / #8A8A92 dark) -->
+    <style name="DsText.Caption" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:fontFamily">@font/ds_font_sans</item>
+        <item name="fontFamily">@font/ds_font_sans</item>
+        <item name="android:textSize">@dimen/ds_text_size_caption</item>
+        <item name="android:lineHeight">@dimen/ds_line_height_caption</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:fontVariationSettings">'wght' 400, 'opsz' 14</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textColor">@color/ds_color_text_tertiary</item>
+        <item name="android:fallbackLineSpacing">true</item>
+    </style>
+
+    <!-- ================================================================== -->
+    <!-- 2. SETTINGSLIB TEXTAPPEARANCE OVERRIDES                            -->
+    <!-- ================================================================== -->
+
+    <style name="TextAppearance.SettingsLib.DisplaySmall" parent="@style/DsText.LargeTitle" />
+    <style name="TextAppearance.SettingsLib.HeadlineSmall" parent="@style/DsText.Title" />
+    <style name="TextAppearance.SettingsLib.TitleMedium" parent="@style/DsText.RowLabel" />
+    <style name="TextAppearance.SettingsLib.TitleMedium.Emphasized" parent="@style/DsText.RowLabel">
+        <item name="android:textFontWeight">600</item>
+        <item name="android:fontVariationSettings">'wght' 600, 'opsz' 16</item>
+    </style>
+    <style name="TextAppearance.SettingsLib.BodyLarge" parent="@style/DsText.RowLabel" />
+    <style name="TextAppearance.SettingsLib.BodyLarge.Emphasized" parent="@style/DsText.RowLabel" />
+    <style name="TextAppearance.SettingsLib.BodyMedium" parent="@style/DsText.RowValue" />
+    <style name="TextAppearance.SettingsLib.BodySmall" parent="@style/DsText.Caption" />
+    <style name="TextAppearance.SettingsLib.BodySmall.Emphasized" parent="@style/DsText.SectionLabel" />
+    <style name="TextAppearance.SettingsLib.LabelLarge" parent="@style/DsText.RowLabel" />
+    <style name="TextAppearance.SettingsLib.LabelLarge.Emphasized" parent="@style/DsText.RowLabel">
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+</resources>

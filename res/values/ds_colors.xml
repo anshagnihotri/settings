@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+-->
+<resources xmlns:androidprv="http://schemas.android.com/apk/prv/res/android">
+
+    <!-- ================================================================== -->
+    <!-- 1. CORE DESIGN SYSTEM TOKENS (LIGHT MODE)                          -->
+    <!-- ================================================================== -->
+
+    <!-- Backgrounds & Surfaces -->
+    <color name="ds_color_bg">#F2F2F4</color>
+    <color name="ds_color_surface">#FFFFFF</color>
+    <color name="ds_color_surface_pressed">#E8E8ED</color>
+    <color name="ds_color_surface_selected">#E5EEFF</color>
+    <color name="ds_color_surface_elevated">#FFFFFF</color>
+    <color name="ds_color_surface_control">#E4E4E9</color>
+
+    <!-- Dark-mode comparison tokens (aliased to light surface in light mode) -->
+    <color name="ds_color_surface_opt1">#FFFFFF</color>
+    <color name="ds_color_surface_opt2">#FFFFFF</color>
+
+    <!-- Borders & Dividers -->
+    <color name="ds_color_surface_border">#00000000</color>
+    <color name="ds_color_divider">#E8E8EC</color>
+
+    <!-- Typography & Icons -->
+    <color name="ds_color_text_primary">#0A0A0B</color>
+    <color name="ds_color_text_secondary">#5F5F68</color>
+    <color name="ds_color_text_tertiary">#6B6B73</color>
+    <color name="ds_color_text_disabled">#610A0A0B</color>
+    <color name="ds_color_icon_primary">#0A0A0B</color>
+    <color name="ds_color_icon_secondary">#5F5F68</color>
+    <color name="ds_color_icon_chevron">#8E8E96</color>
+
+    <!-- Accents & Semantic States:
+         - ds_color_accent (#2F6BFF): for toggles, sliders, links, selection (4.50:1 on #FFFFFF)
+         - ds_color_accent_filled (#2563EB): for filled buttons with white text (5.17:1 on #FFFFFF) -->
+    <color name="ds_color_accent">#2F6BFF</color>
+    <color name="ds_color_accent_pressed">#2456D6</color>
+    <color name="ds_color_accent_filled">#2563EB</color>
+    <color name="ds_color_accent_filled_pressed">#1D4ED8</color>
+    <color name="ds_color_accent_container">#E5EEFF</color>
+    <color name="ds_color_on_accent">#FFFFFF</color>
+    <color name="ds_color_destructive">#D92D20</color>
+    <color name="ds_color_destructive_container">#FEE4E2</color>
+
+    <!-- Controls (Switch / Slider / Back Button) -->
+    <color name="ds_color_switch_track_off">#DEDEE4</color>
+    <color name="ds_color_switch_track_on">@color/ds_color_accent</color>
+    <color name="ds_color_switch_thumb">#FFFFFF</color>
+    <color name="ds_color_back_button_bg">#0F0A0A0B</color>
+    <color name="ds_color_back_button_bg_pressed">#1F0A0A0B</color>
+
+    <!-- Default Faint Ripple / Highlight Fallback (8% black in light mode)
+         Used by dialogs, toolbar buttons, and unmigrated views; list rows use non-ripple tone shift -->
+    <color name="ds_color_ripple_fallback">#14000000</color>
+
+    <!-- Search Highlight Pulse -->
+    <color name="ds_color_highlight_pulse">#262F6BFF</color>
+
+    <!-- ================================================================== -->
+    <!-- 2. FIXED PALETTE OVERRIDES (BLOCKS MONET DYNAMIC COLOR BLEED)      -->
+    <!-- Overrides SettingsLib & Material3 dynamic color tokens locally     -->
+    <!-- ================================================================== -->
+
+    <color name="settings_two_pane_background_color">@color/ds_color_bg</color>
+    <color name="settingslib_colorSurface">@color/ds_color_bg</color>
+    <color name="settingslib_text_color_primary">@color/ds_color_text_primary</color>
+    <color name="settingslib_text_color_secondary">@color/ds_color_text_secondary</color>
+    <color name="settingslib_ripple_color">@color/ds_color_ripple_fallback</color>
+    <color name="settingslib_state_on_color">@color/ds_color_accent_container</color>
+
+    <!-- SettingsLib Material3 token overrides -->
+    <color name="settingslib_materialColorPrimary">@color/ds_color_accent_filled</color>
+    <color name="settingslib_materialColorOnPrimary">@color/ds_color_on_accent</color>
+    <color name="settingslib_materialColorPrimaryContainer">@color/ds_color_accent_container</color>
+    <color name="settingslib_materialColorOnPrimaryContainer">@color/ds_color_accent_filled</color>
+    <color name="settingslib_materialColorPrimaryInverse">@color/ds_color_accent</color>
+    <color name="settingslib_materialColorOnPrimaryFixedVariant">@color/ds_color_accent_filled</color>
+    <color name="settingslib_materialColorSecondary">@color/ds_color_text_secondary</color>
+    <color name="settingslib_materialColorOnSecondary">@color/ds_color_surface</color>
+    <color name="settingslib_materialColorSecondaryContainer">@color/ds_color_surface_control</color>
+    <color name="settingslib_materialColorOnSecondaryContainer">@color/ds_color_text_primary</color>
+    <color name="settingslib_materialColorTertiary">@color/ds_color_text_tertiary</color>
+    <color name="settingslib_materialColorError">@color/ds_color_destructive</color>
+    <color name="settingslib_materialColorSurface">@color/ds_color_bg</color>
+    <color name="settingslib_materialColorSurfaceBright">@color/ds_color_surface</color>
+    <color name="settingslib_materialColorSurfaceVariant">@color/ds_color_surface_control</color>
+    <color name="settingslib_materialColorSurfaceContainerLowest">@color/ds_color_bg</color>
+    <color name="settingslib_materialColorSurfaceContainerLow">@color/ds_color_bg</color>
+    <color name="settingslib_materialColorSurfaceContainer">@color/ds_color_bg</color>
+    <color name="settingslib_materialColorSurfaceContainerHigh">@color/ds_color_surface</color>
+    <color name="settingslib_materialColorSurfaceContainerHighest">@color/ds_color_surface_control</color>
+    <color name="settingslib_materialColorOnSurface">@color/ds_color_text_primary</color>
+    <color name="settingslib_materialColorOnSurfaceVariant">@color/ds_color_text_secondary</color>
+    <color name="settingslib_materialColorOnSurfaceInverse">@color/ds_color_surface</color>
+    <color name="settingslib_materialColorOutline">@color/ds_color_divider</color>
+    <color name="settingslib_materialColorOutlineVariant">@color/ds_color_divider</color>
+
+    <!-- App-level MaterialColor token overrides -->
+    <color name="materialColorPrimary">@color/ds_color_accent_filled</color>
+    <color name="materialColorOnPrimary">@color/ds_color_on_accent</color>
+    <color name="materialColorPrimaryContainer">@color/ds_color_accent_container</color>
+    <color name="materialColorOnPrimaryContainer">@color/ds_color_accent_filled</color>
+    <color name="materialColorOnPrimaryFixed">@color/ds_color_text_primary</color>
+    <color name="materialColorOnPrimaryFixedVariant">@color/ds_color_text_secondary</color>
+    <color name="materialColorInversePrimary">@color/ds_color_accent</color>
+    <color name="materialColorSecondary">@color/ds_color_text_secondary</color>
+    <color name="materialColorOnSecondary">@color/ds_color_surface</color>
+    <color name="materialColorSecondaryContainer">@color/ds_color_surface_control</color>
+    <color name="materialColorOnSecondaryContainer">@color/ds_color_text_primary</color>
+    <color name="materialColorOnSecondaryFixed">@color/ds_color_text_primary</color>
+    <color name="materialColorTertiaryContainer">@color/ds_color_surface_control</color>
+    <color name="materialColorOnTertiaryContainer">@color/ds_color_text_primary</color>
+    <color name="materialColorOnTertiaryFixed">@color/ds_color_text_primary</color>
+    <color name="materialColorTertiaryFixedDim">@color/ds_color_surface_control</color>
+    <color name="materialColorSurface">@color/ds_color_bg</color>
+    <color name="materialColorSurfaceDim">@color/ds_color_bg</color>
+    <color name="materialColorSurfaceBright">@color/ds_color_surface</color>
+    <color name="materialColorSurfaceContainerLowest">@color/ds_color_bg</color>
+    <color name="materialColorSurfaceContainerLow">@color/ds_color_bg</color>
+    <color name="materialColorSurfaceContainer">@color/ds_color_surface</color>
+    <color name="materialColorSurfaceContainerHigh">@color/ds_color_surface</color>
+    <color name="materialColorSurfaceContainerHighest">@color/ds_color_surface_control</color>
+    <color name="materialColorOnSurface">@color/ds_color_text_primary</color>
+    <color name="materialColorOnSurfaceVariant">@color/ds_color_text_secondary</color>
+    <color name="materialColorOutline">@color/ds_color_divider</color>
+    <color name="materialColorOutlineVariant">@color/ds_color_divider</color>
+    <color name="materialColorControlHighlight">@color/ds_color_ripple_fallback</color>
+
+    <!-- Biometric / Fingerprint & SafetyCenter Expressive overrides (Light Mode)
+         Overrides @android:color/system_*_light in res/values/colors.xml -->
+    <color name="fingerprint_enrollment_fp_captured_color_expressive">@color/ds_color_accent</color>
+    <color name="fingerprint_enrollment_fp_error_color_expressive">@color/ds_color_destructive</color>
+    <color name="fingerprint_enrollment_progress_bar_bg_color_expressive">@color/ds_color_surface_control</color>
+    <color name="fingerprint_enrollment_progress_bar_fill_color_expressive">@color/ds_color_accent</color>
+    <color name="fingerprint_enrollment_progress_bar_error_color_expressive">@color/ds_color_destructive_container</color>
+
+    <color name="sfps_enrollment_fp_captured_color_expressive">@color/ds_color_accent</color>
+    <color name="sfps_enrollment_fp_error_color_expressive">@color/ds_color_destructive</color>
+    <color name="sfps_enrollment_progress_bar_bg_color_expressive">@color/ds_color_surface_control</color>
+    <color name="sfps_enrollment_progress_bar_fill_color_expressive">@color/ds_color_accent</color>
+    <color name="sfps_enrollment_progress_bar_error_color_expressive">@color/ds_color_destructive_container</color>
+
+    <color name="sc_materialColorPrimary">@color/ds_color_accent_filled</color>
+    <color name="sc_materialColorPrimaryContainer">@color/ds_color_accent_container</color>
+    <color name="sc_materialColorPrimaryInverse">@color/ds_color_accent</color>
+    <color name="sc_materialColorSecondary">@color/ds_color_text_secondary</color>
+    <color name="sc_materialColorSecondaryContainer">@color/ds_color_surface_control</color>
+    <color name="sc_materialColorTertiary">@color/ds_color_text_tertiary</color>
+    <color name="sc_materialColorSurfaceContainer">@color/ds_color_surface</color>
+    <color name="sc_materialColorOutline">@color/ds_color_divider</color>
+    <color name="sc_materialColorOutlineVariant">@color/ds_color_divider</color>
+
+    <color name="setup_compat_footer_primary_button_bg_color">@color/ds_color_accent_filled</color>
+    <color name="setup_compat_footer_primary_button_text_color">@color/ds_color_on_accent</color>
+
+</resources>

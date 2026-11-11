@@ -59,7 +59,8 @@
     </style>
 
     <style name="SettingsPreferenceFragmentStyle" parent="@style/PreferenceFragment.Material">
-        <item name="android:divider">@*android:drawable/list_divider_material</item>
+        <item name="android:divider">@null</item>
+        <item name="allowDividerAfterLastItem">false</item>
     </style>
 
     <style name="SetupWizardPreferenceFragmentStyle" parent="PreferenceFragment.Material">

@@ -32,7 +32,7 @@
         <item name="android:clipToPadding">false</item>
         <item name="android:clipChildren">false</item>
         <item name="preferenceTheme">@style/SettingsPreferenceTheme</item>
-        <item name="android:listPreferredItemHeight">72dip</item>
+        <item name="android:listPreferredItemHeight">@dimen/ds_row_min_height</item>
         <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:datePickerDialogTheme">@style/PickerDialogTheme.Settings</item>
@@ -65,8 +65,8 @@
         <item name="*android:lockPatternStyle">@style/LockPatternStyle</item>
 
         <!-- For AppBarLayout -->
-        <item name="colorPrimary">@*android:color/primary_device_default_settings_light</item>
-        <item name="colorPrimaryVariant">@android:color/white</item>
+        <item name="colorPrimary">@color/ds_color_accent_filled</item>
+        <item name="colorPrimaryVariant">@color/ds_color_surface</item>
 
         <!-- For slice view in settings -->
         <item name="sliceViewStyle">@style/Widget.SliceView.Settings</item>
@@ -149,7 +149,7 @@
     <style name="Theme.ConfirmDeviceCredentialsDark" parent="@android:style/Theme.DeviceDefault">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">?android:attr/colorPrimary</item>
+        <item name="android:windowBackground">@color/ds_color_bg</item>
 
         <item name="confirmDeviceCredentialsSideMargin">32dp</item>
         <item name="confirmDeviceCredentialsTopMargin">32dp</item>
@@ -198,13 +198,13 @@
     </style>
 
     <style name="Theme.Settings.Home" parent="Theme.Settings.HomeBase">
-        <item name="colorPrimaryDark">@*android:color/primary_dark_device_default_settings_light</item>
+        <item name="colorPrimaryDark">@color/ds_color_bg</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:navigationBarDividerColor">@*android:color/ripple_material_light</item>
+        <item name="android:navigationBarDividerColor">@android:color/transparent</item>
         <!-- Homepage should follow device default design, the values is same as device default theme.-->
-        <item name="android:navigationBarColor">@android:color/white</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryDark</item>
-        <item name="android:colorBackground">@color/settingslib_materialColorSurfaceContainerLow</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:colorBackground">@color/ds_color_bg</item>
     </style>
 
     <style name="Theme.Settings.Home.NoAnimation">

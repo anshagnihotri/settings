@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+-->
+<resources xmlns:androidprv="http://schemas.android.com/apk/prv/res/android">
+
+    <!-- ================================================================== -->
+    <!-- 1. CORE DESIGN SYSTEM TOKENS (DARK MODE)                           -->
+    <!-- ================================================================== -->
+
+    <!-- Near-black background to avoid OLED pure-black purple/green smear -->
+    <color name="ds_color_bg">#0B0B0D</color>
+
+    <!-- Two dark card surface options to compare on device:
+         - ds_color_surface_opt1 (#1A1A1D): higher step above #0B0B0D (+15 L*)
+         - ds_color_surface_opt2 (#161618): subtler step above #0B0B0D (+11 L*)
+         Switch ds_color_surface between opt1 and opt2 to compare on phone. -->
+    <color name="ds_color_surface_opt1">#1A1A1D</color>
+    <color name="ds_color_surface_opt2">#161618</color>
+    <color name="ds_color_surface">@color/ds_color_surface_opt1</color>
+
+    <color name="ds_color_surface_pressed">#242429</color>
+    <color name="ds_color_surface_selected">#172542</color>
+    <color name="ds_color_surface_elevated">#222226</color>
+    <color name="ds_color_surface_control">#26262B</color>
+
+    <!-- Borders & Dividers -->
+    <!-- 8% white hairline catchlight border (#14FFFFFF) -->
+    <color name="ds_color_surface_border">#14FFFFFF</color>
+    <color name="ds_color_divider">#26262A</color>
+
+    <!-- Typography & Icons -->
+    <color name="ds_color_text_primary">#F5F5F7</color>
+    <color name="ds_color_text_secondary">#A0A0A8</color>
+    <color name="ds_color_text_tertiary">#8A8A92</color>
+    <color name="ds_color_text_disabled">#61F5F5F7</color>
+    <color name="ds_color_icon_primary">#F5F5F7</color>
+    <color name="ds_color_icon_secondary">#A0A0A8</color>
+    <color name="ds_color_icon_chevron">#6C6C74</color>
+
+    <!-- Accents & Semantic States:
+         - ds_color_accent (#4D8DFF): for toggles, sliders, links, selection on dark surfaces
+           (5.86:1 on #0B0B0D, 4.85:1 on #1A1A1D, but 3.22:1 with #FFFFFF)
+         - ds_color_accent_filled (#2563EB): for filled buttons with #FFFFFF text (5.17:1 WCAG AA) -->
+    <color name="ds_color_accent">#4D8DFF</color>
+    <color name="ds_color_accent_pressed">#3B78E6</color>
+    <color name="ds_color_accent_filled">#2563EB</color>
+    <color name="ds_color_accent_filled_pressed">#1D4ED8</color>
+    <color name="ds_color_accent_container">#17294D</color>
+    <color name="ds_color_on_accent">#FFFFFF</color>
+    <color name="ds_color_destructive">#FF453A</color>
+    <color name="ds_color_destructive_container">#3A1817</color>
+
+    <!-- Controls (Switch / Slider / Back Button) -->
+    <color name="ds_color_switch_track_off">#323238</color>
+    <color name="ds_color_switch_track_on">@color/ds_color_accent</color>
+    <color name="ds_color_switch_thumb">#FFFFFF</color>
+    <color name="ds_color_back_button_bg">#14FFFFFF</color>
+    <color name="ds_color_back_button_bg_pressed">#26FFFFFF</color>
+
+    <!-- Default Faint Ripple / Highlight Fallback (12% white in dark mode) -->
+    <color name="ds_color_ripple_fallback">#1FFFFFFF</color>
+
+    <!-- Search Highlight Pulse -->
+    <color name="ds_color_highlight_pulse">#334D8DFF</color>
+
+    <!-- ================================================================== -->
+    <!-- 2. FIXED PALETTE OVERRIDES (BLOCKS MONET DYNAMIC COLOR BLEED)      -->
+    <!-- ================================================================== -->
+
+    <color name="settings_two_pane_background_color">@color/ds_color_bg</color>
+    <color name="settingslib_colorSurface">@color/ds_color_bg</color>
+    <color name="settingslib_text_color_primary">@color/ds_color_text_primary</color>
+    <color name="settingslib_text_color_secondary">@color/ds_color_text_secondary</color>
+    <color name="settingslib_ripple_color">@color/ds_color_ripple_fallback</color>
+    <color name="settingslib_state_on_color">@color/ds_color_accent_container</color>
+    <color name="materialColorControlHighlight">@color/ds_color_ripple_fallback</color>
+
+    <color name="fingerprint_enrollment_fp_captured_color_expressive">@color/ds_color_accent</color>
+    <color name="fingerprint_enrollment_fp_error_color_expressive">@color/ds_color_destructive</color>
+    <color name="fingerprint_enrollment_progress_bar_bg_color_expressive">@color/ds_color_surface_control</color>
+    <color name="fingerprint_enrollment_progress_bar_fill_color_expressive">@color/ds_color_accent</color>
+    <color name="fingerprint_enrollment_progress_bar_error_color_expressive">@color/ds_color_destructive_container</color>
+
+    <color name="sfps_enrollment_fp_captured_color_expressive">@color/ds_color_accent</color>
+    <color name="sfps_enrollment_fp_error_color_expressive">@color/ds_color_destructive</color>
+    <color name="sfps_enrollment_progress_bar_bg_color_expressive">@color/ds_color_surface_control</color>
+    <color name="sfps_enrollment_progress_bar_fill_color_expressive">@color/ds_color_accent</color>
+    <color name="sfps_enrollment_progress_bar_error_color_expressive">@color/ds_color_destructive_container</color>
+
+    <color name="sc_materialColorPrimary">@color/ds_color_accent_filled</color>
+    <color name="sc_materialColorPrimaryContainer">@color/ds_color_accent_container</color>
+    <color name="sc_materialColorPrimaryInverse">@color/ds_color_accent</color>
+    <color name="sc_materialColorSecondary">@color/ds_color_text_secondary</color>
+    <color name="sc_materialColorSecondaryContainer">@color/ds_color_surface_control</color>
+    <color name="sc_materialColorTertiary">@color/ds_color_text_tertiary</color>
+    <color name="sc_materialColorSurfaceContainer">@color/ds_color_surface</color>
+    <color name="sc_materialColorOutline">@color/ds_color_divider</color>
+    <color name="sc_materialColorOutlineVariant">@color/ds_color_divider</color>
+
+    <color name="setup_compat_footer_primary_button_bg_color">@color/ds_color_accent_filled</color>
+    <color name="setup_compat_footer_primary_button_text_color">@color/ds_color_on_accent</color>
+
+</resources>

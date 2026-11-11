@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+-->
+<resources>
+
+    <!-- ================================================================== -->
+    <!-- BASE DESIGN SYSTEM OVERLAY FOR SETTINGS (DARK)                     -->
+    <!-- ================================================================== -->
+    <style name="DsThemeOverlay.SettingsBase" parent="Theme.SettingsBase.Expressive">
+        <!-- Fixed Background & Surface Tokens -->
+        <item name="android:colorBackground">@color/ds_color_bg</item>
+        <item name="android:windowBackground">@color/ds_color_bg</item>
+        <item name="colorSurface">@color/ds_color_surface</item>
+        <item name="elevationOverlayEnabled">false</item>
+
+        <!-- Primary & Action Bar Tokens:
+             - colorPrimary (AppCompat/M3): used by filled MaterialButton & M3 controls -> ds_color_accent_filled (#2563EB, 5.17:1 with #FFFFFF)
+             - android:colorPrimary (framework): used as fillColor/tint by 35+ res/drawable/ic_*.xml vector icons -> ds_color_icon_primary (#F5F5F7)
+             - colorPrimaryDark / android:colorPrimaryDark: used by ActionBar/StatusBar backgrounds -> ds_color_bg
+             - colorPrimaryVariant: used by AppBar/Toolbar surface -> ds_color_surface -->
+        <item name="colorPrimary">@color/ds_color_accent_filled</item>
+        <item name="colorOnPrimary">@color/ds_color_on_accent</item>
+        <item name="android:colorPrimary">@color/ds_color_icon_primary</item>
+        <item name="colorPrimaryDark">@color/ds_color_bg</item>
+        <item name="android:colorPrimaryDark">@color/ds_color_bg</item>
+        <item name="colorPrimaryVariant">@color/ds_color_surface</item>
+
+        <!-- Fixed Single Accent Color (Toggles, Links, Selection) -->
+        <item name="colorAccent">@color/ds_color_accent</item>
+        <item name="android:colorAccent">@color/ds_color_accent</item>
+        <item name="colorControlActivated">@color/ds_color_accent</item>
+        <item name="android:colorControlActivated">@color/ds_color_accent</item>
+        <item name="android:colorError">@color/ds_color_destructive</item>
+
+        <!-- Default Faint Ripple / Highlight Fallback (#1FFFFFFF in dark mode)
+             Used by dialogs, toolbar buttons, and unmigrated views; list rows use non-ripple tone shift -->
+        <item name="android:colorControlHighlight">@color/ds_color_ripple_fallback</item>
+        <item name="colorControlHighlight">@color/ds_color_ripple_fallback</item>
+
+        <!-- Typography Defaults -->
+        <item name="android:fontFamily">@font/ds_font_sans</item>
+        <item name="fontFamily">@font/ds_font_sans</item>
+        <item name="android:textColorPrimary">@color/ds_color_text_primary</item>
+        <item name="android:textColorSecondary">@color/ds_color_text_secondary</item>
+        <item name="android:textColorTertiary">@color/ds_color_text_tertiary</item>
+        <item name="android:textAppearanceListItem">@style/DsText.RowLabel</item>
+        <item name="android:textAppearanceListItemSecondary">@style/DsText.RowValue</item>
+        <item name="android:textAppearanceSmall">@style/DsText.RowValue</item>
+
+        <!-- Row Geometry & Edge-to-Edge Bars -->
+        <item name="android:listPreferredItemHeight">@dimen/ds_row_min_height</item>
+        <item name="android:listPreferredItemHeightSmall">@dimen/ds_row_min_height</item>
+        <item name="android:listPreferredItemPaddingStart">@dimen/ds_screen_gutter</item>
+        <item name="android:listPreferredItemPaddingEnd">@dimen/ds_screen_gutter</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:listDivider">@null</item>
+    </style>
+
+</resources>

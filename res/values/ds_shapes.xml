@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+-->
+<resources>
+
+    <!-- Card shape (16dp rounded corners) -->
+    <style name="DsShape.Card" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/ds_radius_card</item>
+    </style>
+
+    <!-- Controls & Search Bar shape (14dp rounded corners) -->
+    <style name="DsShape.Control" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/ds_radius_control</item>
+    </style>
+
+    <!-- Dialog shape (22dp rounded corners) -->
+    <style name="DsShape.Dialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/ds_radius_dialog</item>
+    </style>
+
+    <!-- Bottom Sheet shape (24dp top rounded corners) -->
+    <style name="DsShape.BottomSheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/ds_radius_sheet</item>
+        <item name="cornerSizeTopRight">@dimen/ds_radius_sheet</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <!-- Full Pill shape (buttons, chips, toggles) -->
+    <style name="DsShape.Pill" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>
+
