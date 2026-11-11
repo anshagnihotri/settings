@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 The LineageOS Project
+  SPDX-License-Identifier: Apache-2.0
+
+  Design System (ds_) PreferenceCategory header layout:
+  - Small sentence-case section label (13sp/18sp w500, ds_color_text_secondary)
+  - 24dp top gap between groups (ds_section_gap_top)
+  - 8dp bottom gap from label to card (ds_section_label_to_card_gap)
+  - 32dp horizontal padding (16dp screen gutter + 16dp card inner alignment)
+  - When a PreferenceCategory has no title (title visibility = GONE), the 8dp bottom
+    margin on @android:id/title collapses automatically, leaving a pure 24dp group gap.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ds_category_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/ds_row_screen_padding_horizontal"
+    android:paddingEnd="@dimen/ds_row_screen_padding_horizontal"
+    android:paddingTop="@dimen/ds_section_gap_top"
+    android:paddingBottom="0dp"
+    android:importantForAccessibility="yes">
+
+    <TextView
+        android:id="@android:id/title"
+        style="@style/DsText.SectionLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ds_section_label_to_card_gap"
+        android:textAlignment="viewStart"
+        android:hyphenationFrequency="normalFast" />
+
+    <TextView
+        android:id="@android:id/summary"
+        style="@style/DsText.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="@dimen/ds_section_label_to_card_gap"
+        android:textAlignment="viewStart"
+        android:visibility="gone" />
+
+</LinearLayout>

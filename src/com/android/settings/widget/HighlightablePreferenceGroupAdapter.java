@@ -149,18 +149,52 @@ public class HighlightablePreferenceGroupAdapter extends SettingsPreferenceGroup
     }
 
     /**
-     * Normalizes horizontal row padding after {@link SettingsPreferenceGroupAdapter#onBindViewHolder}
-     * (which overrides start/end padding in expressive mode), binds opt-in right-aligned value
-     * extras on standard {@link Preference} instances, and shows {@code R.id.ds_chevron} strictly
-     * on drill-down/dialog rows that do not have a trailing widget.
+     * Normalizes horizontal row/category padding after
+     * {@link SettingsPreferenceGroupAdapter#onBindViewHolder} (which overrides start/end padding in
+     * expressive mode), adjusts category top spacing (24dp between groups, compact at position 0),
+     * binds opt-in right-aligned value extras on standard {@link Preference} instances, and shows
+     * {@code R.id.ds_chevron} strictly on drill-down/dialog rows that do not have a trailing
+     * widget.
      */
     private void bindDsRowViews(@NonNull PreferenceViewHolder holder, int position) {
+        final View itemView = holder.itemView;
+        final Preference preference = getItem(position);
+
+        if (itemView.getId() == R.id.ds_untitled_category_space) {
+            final ViewGroup.LayoutParams lp = itemView.getLayoutParams();
+            if (lp != null) {
+                final int targetHeight = itemView.getResources().getDimensionPixelSize(
+                        position == 0 ? R.dimen.ds_space_2 : R.dimen.ds_section_gap_top);
+                if (lp.height != targetHeight) {
+                    lp.height = targetHeight;
+                    itemView.setLayoutParams(lp);
+                }
+            }
+            return;
+        }
+
+        if (itemView.getId() == R.id.ds_category_root
+                || holder.findViewById(R.id.ds_category_root) != null) {
+            final int horizontalPadding = itemView.getResources()
+                    .getDimensionPixelSize(R.dimen.ds_row_screen_padding_horizontal);
+            final boolean hasTitle = preference != null && !TextUtils.isEmpty(preference.getTitle());
+            final int topPadding = itemView.getResources().getDimensionPixelSize(
+                    position == 0
+                            ? (hasTitle ? R.dimen.ds_space_3 : R.dimen.ds_space_2)
+                            : R.dimen.ds_section_gap_top);
+            itemView.setPaddingRelative(
+                    horizontalPadding,
+                    topPadding,
+                    horizontalPadding,
+                    itemView.getPaddingBottom());
+            return;
+        }
+
         final View chevronView = holder.findViewById(R.id.ds_chevron);
         if (chevronView == null) {
             return;
         }
 
-        final View itemView = holder.itemView;
         final int horizontalPadding = itemView.getResources()
                 .getDimensionPixelSize(R.dimen.ds_row_screen_padding_horizontal);
         itemView.setPaddingRelative(
@@ -169,7 +203,6 @@ public class HighlightablePreferenceGroupAdapter extends SettingsPreferenceGroup
                 horizontalPadding,
                 itemView.getPaddingBottom());
 
-        final Preference preference = getItem(position);
         final View valueView = holder.findViewById(R.id.ds_row_value);
         if (valueView instanceof TextView && !(preference instanceof DsValuePreference)) {
             final TextView rightValueText = (TextView) valueView;

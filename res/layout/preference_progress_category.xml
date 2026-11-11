@@ -16,21 +16,23 @@
 
 <!-- Layout used for ProgressCategory in bluetooth settings. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ds_category_root"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:gravity="center_vertical"
               android:orientation="horizontal"
-              android:paddingStart="?android:attr/listPreferredItemPaddingStart"
-              android:paddingTop="16dp"
-              android:paddingBottom="16dp"
-              android:paddingEnd="?android:attr/listPreferredItemPaddingEnd">
+              android:paddingStart="@dimen/ds_row_screen_padding_horizontal"
+              android:paddingTop="@dimen/ds_section_gap_top"
+              android:paddingBottom="@dimen/ds_section_label_to_card_gap"
+              android:paddingEnd="@dimen/ds_row_screen_padding_horizontal">
 
     <LinearLayout
         android:id="@+id/icon_frame"
-        android:layout_width="56dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="start|center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
         <com.android.internal.widget.PreferenceImageView
             android:id="@android:id/icon"
             android:layout_width="wrap_content"
@@ -39,27 +41,26 @@
             android:maxHeight="18dp"/>
     </LinearLayout>
 
-    <!-- This text view has the style of the list separator text view without the background and padding. -->
     <TextView
         android:id="@android:id/title"
+        style="@style/DsText.SectionLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_gravity="start|center"
-        android:textAppearance="@*android:style/TextAppearance.DeviceDefault.Body2"
+        android:layout_gravity="start|center_vertical"
+        android:textAlignment="viewStart"
         android:hyphenationFrequency="normalFast"
-        android:lineBreakWordStyle="phrase"
-        android:textColor="?android:attr/colorAccent"/>
+        android:lineBreakWordStyle="phrase" />
 
     <ProgressBar
         android:id="@+id/scanning_progress"
         style="?android:attr/progressBarStyleSmallTitle"
         android:focusable="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="16dip"
-        android:minWidth="32dp"
+        android:layout_marginStart="12dp"
+        android:indeterminateTint="@color/ds_color_text_secondary"
         android:text="@string/progress_scanning"/>
 
 </LinearLayout>

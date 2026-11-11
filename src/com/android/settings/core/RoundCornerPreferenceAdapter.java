@@ -18,7 +18,9 @@ package com.android.settings.core;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
@@ -70,7 +72,45 @@ public class RoundCornerPreferenceAdapter extends PreferenceGroupAdapter {
     @Override
     public void onBindViewHolder(@NonNull PreferenceViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
+        bindDsCategorySpacing(holder, position);
         updateBackground(holder, position);
+    }
+
+    private void bindDsCategorySpacing(@NonNull PreferenceViewHolder holder, int position) {
+        final View itemView = holder.itemView;
+        if (itemView.getId() == com.android.settings.R.id.ds_untitled_category_space) {
+            final ViewGroup.LayoutParams lp = itemView.getLayoutParams();
+            if (lp != null) {
+                final int targetHeight = itemView.getResources().getDimensionPixelSize(
+                        position == 0
+                                ? com.android.settings.R.dimen.ds_space_2
+                                : com.android.settings.R.dimen.ds_section_gap_top);
+                if (lp.height != targetHeight) {
+                    lp.height = targetHeight;
+                    itemView.setLayoutParams(lp);
+                }
+            }
+            return;
+        }
+
+        if (itemView.getId() == com.android.settings.R.id.ds_category_root
+                || holder.findViewById(com.android.settings.R.id.ds_category_root) != null) {
+            final Preference preference = getItem(position);
+            final boolean hasTitle = preference != null && !TextUtils.isEmpty(preference.getTitle());
+            final int horizontalPadding = itemView.getResources().getDimensionPixelSize(
+                    com.android.settings.R.dimen.ds_row_screen_padding_horizontal);
+            final int topPadding = itemView.getResources().getDimensionPixelSize(
+                    position == 0
+                            ? (hasTitle
+                                    ? com.android.settings.R.dimen.ds_space_3
+                                    : com.android.settings.R.dimen.ds_space_2)
+                            : com.android.settings.R.dimen.ds_section_gap_top);
+            itemView.setPaddingRelative(
+                    horizontalPadding,
+                    topPadding,
+                    horizontalPadding,
+                    itemView.getPaddingBottom());
+        }
     }
 
     protected @DrawableRes int getRoundCornerDrawableRes(int position, boolean isSelected) {

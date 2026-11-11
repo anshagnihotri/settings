@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 The LineageOS Project
+  SPDX-License-Identifier: Apache-2.0
+
+  Local override of SettingsLib's settingslib_expressive_untitled_preference_category.xml:
+  Provides a 24dp vertical group gap (ds_section_gap_top) between untitled grouped cards
+  (reduced to 8dp when at adapter position 0).
+-->
+<Space
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ds_untitled_category_space"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ds_section_gap_top"
+    android:importantForAccessibility="no" />

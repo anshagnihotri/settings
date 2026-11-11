@@ -20,6 +20,8 @@
 <resources>
 
     <style name="SettingsPreferenceTheme.Expressive" parent="@style/PreferenceTheme.SettingsLib.Expressive">
+        <item name="preferenceCategoryStyle">@style/DsPreference.Category</item>
+        <item name="android:preferenceCategoryStyle">@style/DsPreference.Category</item>
         <item name="preferenceStyle">@style/DsPreference.Row</item>
         <item name="dialogPreferenceStyle">@style/DsPreference.DialogRow</item>
         <item name="editTextPreferenceStyle">@style/DsPreference.EditTextRow</item>
@@ -29,6 +31,17 @@
         <item name="seekBarPreferenceStyle">@style/SettingsSeekBarPreference</item>
         <item name="twoStateButtonPreferenceStyle">@style/TwoStateButtonPreference</item>
         <item name="preferenceFragmentCompatStyle">@style/SettingsPreferenceFragmentStyle</item>
+    </style>
+
+    <style name="DsPreference.Category" parent="@style/Preference.Category.Material">
+        <item name="android:layout">@layout/ds_preference_category</item>
+        <item name="layout">@layout/ds_preference_category</item>
+        <item name="shouldDisableView">false</item>
+        <item name="android:selectable">false</item>
+        <item name="selectable">false</item>
+        <item name="iconSpaceReserved">false</item>
+        <item name="allowDividerAbove">false</item>
+        <item name="allowDividerBelow">false</item>
     </style>
 
     <style name="DsPreference.Row" parent="@style/Preference.Material">
