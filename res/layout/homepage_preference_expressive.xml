@@ -13,35 +13,44 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
-  -->
+-->
 
+<!--
+  Design System Homepage Row Layout:
+  - Root paddingStart/End = 32dp (16dp outer screen gutter + 16dp inner card padding)
+  - Icon box = 24dp (containing 22dp icon) + 12dp gap to text
+  - Text & inset divider start at 16dp + 24dp + 12dp = 52dp from card left edge (68dp from screen edge)
+  - Preserves all IDs required by HomepagePreferenceLayoutHelper.java
+-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
-    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
-    android:minHeight="72dp"
+    android:minHeight="@dimen/ds_row_min_height"
+    android:paddingStart="@dimen/ds_row_screen_padding_horizontal"
+    android:paddingEnd="@dimen/ds_row_screen_padding_horizontal"
     android:gravity="center_vertical"
-    android:background="?android:attr/selectableItemBackground"
     android:clipToPadding="false"
     android:baselineAligned="false">
 
     <LinearLayout
         android:id="@+id/icon_frame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="40dp"
-        android:minHeight="40dp"
+        android:layout_width="@dimen/ds_icon_box_size"
+        android:layout_height="@dimen/ds_icon_box_size"
+        android:minWidth="@dimen/ds_icon_box_size"
+        android:minHeight="@dimen/ds_icon_box_size"
+        android:layout_marginEnd="@dimen/ds_icon_to_text_gap"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingStart="16dp">
+        android:orientation="horizontal">
 
         <androidx.preference.internal.PreferenceImageView
             android:id="@android:id/icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:scaleType="centerInside"/>
+            android:layout_width="@dimen/ds_icon_size"
+            android:layout_height="@dimen/ds_icon_size"
+            android:scaleType="fitCenter"
+            app:maxWidth="@dimen/ds_icon_size"
+            app:maxHeight="@dimen/ds_icon_size" />
 
     </LinearLayout>
 
@@ -50,60 +59,61 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:paddingStart="@dimen/homepage_preference_text_padding_start_expressive"
-        android:paddingEnd="16dp">
+        android:paddingTop="@dimen/ds_row_padding_vertical"
+        android:paddingBottom="@dimen/ds_row_padding_vertical"
+        android:paddingStart="0dp"
+        android:paddingEnd="8dp">
 
         <TextView
             android:id="@android:id/title"
+            style="@style/DsText.RowLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:textAlignment="viewStart"
             android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceListItem"
-            android:textColor="@color/settingslib_text_color_primary"
-            android:ellipsize="marquee"/>
+            android:ellipsize="marquee" />
 
         <TextView
             android:id="@android:id/summary"
+            style="@style/DsText.RowValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@android:id/title"
             android:layout_alignStart="@android:id/title"
+            android:layout_marginTop="2dp"
             android:layout_gravity="start"
             android:textAlignment="viewStart"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/settingslib_text_color_secondary"
-            android:maxLines="4"
-            style="@style/PreferenceSummaryTextStyle"/>
+            android:maxLines="2"
+            android:ellipsize="end" />
+
     </RelativeLayout>
 
+    <!-- Preserved for HomepagePreferenceLayoutHelper.setAlert() -->
     <FrameLayout
         android:id="@+id/alert_frame"
-        android:minHeight="40dp"
-        android:minWidth="40dp"
+        android:minHeight="24dp"
+        android:minWidth="24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:layout_gravity="center|end"
-        android:layout_marginEnd="16dp">
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="8dp">
 
         <ImageView
             android:id="@+id/alert_unnumbered"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
             android:src="@drawable/circle"
             android:contentDescription="@null"
-            android:tint="@color/settingslib_materialColorPrimary"/>
+            android:tint="@color/ds_color_accent" />
 
         <FrameLayout
             android:id="@+id/alert_numbered_frame"
-            android:minHeight="24dp"
-            android:minWidth="24dp"
+            android:minHeight="20dp"
+            android:minWidth="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
@@ -116,16 +126,41 @@
                 android:layout_gravity="center"
                 android:src="@drawable/circle"
                 android:contentDescription="@null"
-                android:tint="@color/settingslib_materialColorSecondaryContainer"/>
+                android:tint="@color/ds_color_accent" />
 
             <TextView
                 android:id="@+id/alert_number_fg"
+                style="@style/DsText.Caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/settingslib_materialColorOnSecondaryContainer"
-                style="@style/TextAppearance.SettingsLib.TitleMedium" />
+                android:textColor="@color/ds_color_on_accent" />
         </FrameLayout>
 
     </FrameLayout>
+
+    <!-- Opt-in right-aligned value text (hidden unless populated) -->
+    <TextView
+        android:id="@+id/ds_row_value"
+        style="@style/DsText.RowValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:maxWidth="160dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textAlignment="viewEnd"
+        android:visibility="gone" />
+
+    <!-- Trailing chevron on all homepage navigation rows -->
+    <ImageView
+        android:id="@+id/ds_chevron"
+        android:layout_width="@dimen/ds_chevron_size"
+        android:layout_height="@dimen/ds_chevron_size"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/ds_chevron_margin_start"
+        android:src="@drawable/ds_ic_chevron_right"
+        android:importantForAccessibility="no" />
+
 </LinearLayout>

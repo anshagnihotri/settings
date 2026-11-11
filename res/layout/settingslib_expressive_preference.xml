@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+
+  Overrides SettingsLib's @layout/settingslib_expressive_preference so any preference
+  referencing it directly inherits the 52dp row geometry, 24dp icon frame, and chevron support.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/ds_row_min_height"
+    android:paddingStart="@dimen/ds_row_screen_padding_horizontal"
+    android:paddingEnd="@dimen/ds_row_screen_padding_horizontal"
+    android:gravity="center_vertical"
+    android:clipToPadding="false"
+    android:baselineAligned="false">
+
+    <include layout="@layout/settingslib_expressive_preference_icon_frame" />
+
+    <RelativeLayout
+        android:id="@+id/text_frame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="@dimen/ds_row_padding_vertical"
+        android:paddingBottom="@dimen/ds_row_padding_vertical"
+        android:paddingStart="0dp"
+        android:paddingEnd="8dp"
+        android:filterTouchesWhenObscured="false">
+
+        <TextView
+            android:id="@android:id/title"
+            style="@style/DsText.RowLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textAlignment="viewStart"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@android:id/summary"
+            style="@style/DsText.RowValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@android:id/title"
+            android:layout_alignStart="@android:id/title"
+            android:layout_marginTop="2dp"
+            android:layout_gravity="start"
+            android:textAlignment="viewStart"
+            android:maxLines="10" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ds_row_value"
+        style="@style/DsText.RowValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:maxWidth="160dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textAlignment="viewEnd"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/ds_chevron"
+        android:layout_width="@dimen/ds_chevron_size"
+        android:layout_height="@dimen/ds_chevron_size"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/ds_chevron_margin_start"
+        android:src="@drawable/ds_ic_chevron_right"
+        android:importantForAccessibility="no"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@android:id/widget_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="end|center_vertical"
+        android:orientation="vertical" />
+
+</LinearLayout>

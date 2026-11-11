@@ -20,11 +20,43 @@
 <resources>
 
     <style name="SettingsPreferenceTheme.Expressive" parent="@style/PreferenceTheme.SettingsLib.Expressive">
+        <item name="preferenceStyle">@style/DsPreference.Row</item>
+        <item name="dialogPreferenceStyle">@style/DsPreference.DialogRow</item>
+        <item name="editTextPreferenceStyle">@style/DsPreference.EditTextRow</item>
+        <item name="dropdownPreferenceStyle">@style/DsPreference.DropDownRow</item>
         <item name="cardPreferenceStyle">@style/CardPreference</item>
         <item name="slicePreferenceStyle">@style/SlicePreference</item>
         <item name="seekBarPreferenceStyle">@style/SettingsSeekBarPreference</item>
         <item name="twoStateButtonPreferenceStyle">@style/TwoStateButtonPreference</item>
         <item name="preferenceFragmentCompatStyle">@style/SettingsPreferenceFragmentStyle</item>
+    </style>
+
+    <style name="DsPreference.Row" parent="@style/Preference.Material">
+        <item name="android:layout">@layout/ds_preference_row</item>
+        <item name="layout">@layout/ds_preference_row</item>
+        <item name="iconSpaceReserved">false</item>
+        <item name="singleLineTitle">false</item>
+    </style>
+
+    <style name="DsPreference.DialogRow" parent="@style/Preference.Material.DialogPreference">
+        <item name="android:layout">@layout/ds_preference_row</item>
+        <item name="layout">@layout/ds_preference_row</item>
+        <item name="android:positiveButtonText">@android:string/ok</item>
+        <item name="android:negativeButtonText">@android:string/cancel</item>
+        <item name="iconSpaceReserved">false</item>
+    </style>
+
+    <style name="DsPreference.EditTextRow" parent="@style/Preference.Material.DialogPreference.EditTextPreference">
+        <item name="android:layout">@layout/ds_preference_row</item>
+        <item name="layout">@layout/ds_preference_row</item>
+        <item name="android:dialogLayout">@layout/preference_dialog_edittext_material</item>
+        <item name="iconSpaceReserved">false</item>
+    </style>
+
+    <style name="DsPreference.DropDownRow" parent="@style/Preference.Material.DropDown">
+        <item name="android:layout">@layout/ds_preference_row</item>
+        <item name="layout">@layout/ds_preference_row</item>
+        <item name="iconSpaceReserved">false</item>
     </style>
 
     <style name="SyncSwitchPreference.Expressive" parent="@style/SettingsLibPreference.SwitchPreferenceCompat.Expressive">

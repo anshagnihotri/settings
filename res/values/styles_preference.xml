@@ -20,6 +20,10 @@
 <resources>
 
     <style name="SettingsPreferenceTheme" parent="@style/PreferenceTheme.SettingsLib">
+        <item name="preferenceStyle">@style/DsPreference.Row</item>
+        <item name="dialogPreferenceStyle">@style/DsPreference.DialogPreference</item>
+        <item name="editTextPreferenceStyle">@style/DsPreference.EditTextPreference</item>
+        <item name="dropdownPreferenceStyle">@style/DsPreference.DropDown</item>
         <item name="cardPreferenceStyle">@style/CardPreference</item>
         <item name="slicePreferenceStyle">@style/SlicePreference</item>
         <item name="seekBarPreferenceStyle">@style/SettingsSeekBarPreference</item>

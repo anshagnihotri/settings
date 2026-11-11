@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+
+  Trailing chevron for navigation rows:
+  16dp size, 1.5dp stroke (scaled to 24x24 viewport -> 2.25px strokeWidth at 16dp, or 1.5dp at 24dp),
+  round caps and joins, autoMirrored for RTL.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/ds_chevron_size"
+    android:height="@dimen/ds_chevron_size"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:autoMirrored="true">
+    <path
+        android:pathData="M9,6L15,12L9,18"
+        android:strokeWidth="2.0"
+        android:strokeColor="@color/ds_color_icon_chevron"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent" />
+</vector>

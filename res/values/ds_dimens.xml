@@ -30,6 +30,7 @@
     <dimen name="ds_row_min_height">52dp</dimen>
     <dimen name="ds_min_touch_target">48dp</dimen>
     <dimen name="ds_row_padding_horizontal">16dp</dimen>
+    <dimen name="ds_row_screen_padding_horizontal">32dp</dimen> <!-- 16dp screen gutter + 16dp card inner padding -->
     <dimen name="ds_row_padding_vertical">10dp</dimen>
 
     <!-- Icon + Text + Inset Divider Math:

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 Custom ROM Design System
+  Licensed under the Apache License, Version 2.0
+
+  Overrides SettingsLib's @layout/settingslib_expressive_preference_icon_frame
+  to enforce a 24dp icon box with a 22dp outline icon and 12dp gap to text.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/icon_frame"
+    android:layout_width="@dimen/ds_icon_box_size"
+    android:layout_height="@dimen/ds_icon_box_size"
+    android:minWidth="@dimen/ds_icon_box_size"
+    android:minHeight="@dimen/ds_icon_box_size"
+    android:layout_marginEnd="@dimen/ds_icon_to_text_gap"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <androidx.preference.internal.PreferenceImageView
+        android:id="@android:id/icon"
+        android:layout_width="@dimen/ds_icon_size"
+        android:layout_height="@dimen/ds_icon_size"
+        android:scaleType="fitCenter"
+        app:maxWidth="@dimen/ds_icon_size"
+        app:maxHeight="@dimen/ds_icon_size" />
+
+</LinearLayout>

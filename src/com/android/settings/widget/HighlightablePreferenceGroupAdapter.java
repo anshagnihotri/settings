@@ -30,6 +30,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.DrawableRes;
@@ -40,16 +41,19 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.preference.DialogPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.PreferenceViewHolder;
+import androidx.preference.TwoStatePreference;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.accessibility.AccessibilityUtil;
+import com.android.settingslib.PrimarySwitchPreference;
 import com.android.settingslib.widget.Expandable;
 import com.android.settingslib.widget.SettingsPreferenceGroupAdapter;
 import com.android.settingslib.widget.SettingsThemeHelper;
@@ -140,7 +144,94 @@ public class HighlightablePreferenceGroupAdapter extends SettingsPreferenceGroup
     @Override
     public void onBindViewHolder(@NonNull PreferenceViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
+        bindDsRowViews(holder, position);
         updateBackground(holder, position);
+    }
+
+    /**
+     * Normalizes horizontal row padding after {@link SettingsPreferenceGroupAdapter#onBindViewHolder}
+     * (which overrides start/end padding in expressive mode), binds opt-in right-aligned value
+     * extras on standard {@link Preference} instances, and shows {@code R.id.ds_chevron} strictly
+     * on drill-down/dialog rows that do not have a trailing widget.
+     */
+    private void bindDsRowViews(@NonNull PreferenceViewHolder holder, int position) {
+        final View chevronView = holder.findViewById(R.id.ds_chevron);
+        if (chevronView == null) {
+            return;
+        }
+
+        final View itemView = holder.itemView;
+        final int horizontalPadding = itemView.getResources()
+                .getDimensionPixelSize(R.dimen.ds_row_screen_padding_horizontal);
+        itemView.setPaddingRelative(
+                horizontalPadding,
+                itemView.getPaddingTop(),
+                horizontalPadding,
+                itemView.getPaddingBottom());
+
+        final Preference preference = getItem(position);
+        final View valueView = holder.findViewById(R.id.ds_row_value);
+        if (valueView instanceof TextView && !(preference instanceof DsValuePreference)) {
+            final TextView rightValueText = (TextView) valueView;
+            CharSequence rightValue = null;
+            boolean summaryMovedToRight = false;
+            if (preference != null && preference.peekExtras() != null) {
+                final Bundle extras = preference.peekExtras();
+                rightValue = extras.getCharSequence(DsValuePreference.EXTRA_RIGHT_VALUE);
+                if (TextUtils.isEmpty(rightValue)
+                        && extras.getBoolean(DsValuePreference.EXTRA_SUMMARY_AS_RIGHT_VALUE, false)) {
+                    rightValue = preference.getSummary();
+                    summaryMovedToRight = !TextUtils.isEmpty(rightValue);
+                }
+            }
+            if (!TextUtils.isEmpty(rightValue)) {
+                rightValueText.setText(rightValue);
+                rightValueText.setVisibility(View.VISIBLE);
+                if (summaryMovedToRight) {
+                    final View summaryView = holder.findViewById(android.R.id.summary);
+                    if (summaryView != null) {
+                        summaryView.setVisibility(View.GONE);
+                    }
+                }
+            } else {
+                rightValueText.setText(null);
+                rightValueText.setVisibility(View.GONE);
+            }
+        }
+
+        final View widgetFrame = holder.findViewById(android.R.id.widget_frame);
+        final boolean hasVisibleWidget = hasVisibleWidgetChild(widgetFrame);
+        final boolean isTogglePreference = (preference instanceof TwoStatePreference)
+                || (preference instanceof PrimarySwitchPreference);
+        final boolean hasNavigationTarget = preference != null
+                && (preference.getFragment() != null
+                        || preference.getIntent() != null
+                        || preference.getOnPreferenceClickListener() != null
+                        || preference instanceof DialogPreference);
+
+        final boolean showChevron = preference != null
+                && preference.isSelectable()
+                && preference.isEnabled()
+                && !isTogglePreference
+                && !hasVisibleWidget
+                && hasNavigationTarget;
+        chevronView.setVisibility(showChevron ? View.VISIBLE : View.GONE);
+    }
+
+    private static boolean hasVisibleWidgetChild(@Nullable View widgetFrame) {
+        if (widgetFrame == null || widgetFrame.getVisibility() != View.VISIBLE) {
+            return false;
+        }
+        if (widgetFrame instanceof ViewGroup) {
+            final ViewGroup group = (ViewGroup) widgetFrame;
+            for (int i = 0, count = group.getChildCount(); i < count; i++) {
+                if (group.getChildAt(i).getVisibility() == View.VISIBLE) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return true;
     }
 
     @VisibleForTesting
