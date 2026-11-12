@@ -17,29 +17,30 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingStart="@dimen/ds_row_screen_padding_horizontal"
-    android:paddingEnd="@dimen/ds_row_screen_padding_horizontal"
-    android:paddingTop="@dimen/ds_section_gap_top"
+    android:paddingStart="@dimen/redesign_row_horizontal_padding"
+    android:paddingEnd="@dimen/redesign_row_horizontal_padding"
+    android:paddingTop="@dimen/redesign_group_vertical_spacing"
     android:paddingBottom="0dp"
     android:importantForAccessibility="yes">
 
     <TextView
         android:id="@android:id/title"
-        style="@style/DsText.SectionLabel"
+        style="@style/TextAppearance.Redesign.Label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/ds_section_label_to_card_gap"
+        android:layout_marginBottom="8dp"
         android:textAlignment="viewStart"
         android:hyphenationFrequency="normalFast" />
 
     <TextView
         android:id="@android:id/summary"
-        style="@style/DsText.Caption"
+        style="@style/TextAppearance.Redesign.Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-4dp"
-        android:layout_marginBottom="@dimen/ds_section_label_to_card_gap"
+        android:layout_marginBottom="8dp"
         android:textAlignment="viewStart"
         android:visibility="gone" />
 
 </LinearLayout>
+

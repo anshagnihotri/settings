@@ -411,10 +411,14 @@ public class SettingsHomepageActivity extends FragmentActivity implements
     }
 
     private void initSearchBarView() {
-        View toolbar = findViewById(R.id.search_action_bar);
-        FeatureFactory.getFeatureFactory().getSearchFeatureProvider()
-                .initSearchToolbar(this /* activity */, toolbar,
-                        SettingsEnums.SETTINGS_HOMEPAGE);
+        View fab = findViewById(R.id.redesign_search_fab);
+        if (fab != null) {
+            fab.setOnClickListener(v -> {
+                Intent intent = FeatureFactory.getFeatureFactory().getSearchFeatureProvider()
+                        .buildSearchIntent(this, SettingsEnums.SETTINGS_HOMEPAGE);
+                startActivity(intent);
+            });
+        }
     }
 
     private void updateHomepageUI() {

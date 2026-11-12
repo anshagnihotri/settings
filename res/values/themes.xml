@@ -32,7 +32,8 @@
         <item name="android:clipToPadding">false</item>
         <item name="android:clipChildren">false</item>
         <item name="preferenceTheme">@style/SettingsPreferenceTheme</item>
-        <item name="android:listPreferredItemHeight">@dimen/ds_row_min_height</item>
+        <item name="android:listPreferredItemHeight">@dimen/redesign_row_height</item>
+        <item name="android:colorBackground">@color/redesign_main_background</item>
         <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:datePickerDialogTheme">@style/PickerDialogTheme.Settings</item>

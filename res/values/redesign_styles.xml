@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text Appearances -->
+    <style name="TextAppearance.Redesign.Heading" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/redesign_text_size_heading</item>
+        <item name="android:textColor">@color/redesign_primary_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.Redesign.ProfileName" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/redesign_text_size_profile_name</item>
+        <item name="android:textColor">@color/redesign_primary_text</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.Redesign.ProfileSecondary" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/redesign_text_size_profile_secondary</item>
+        <item name="android:textColor">@color/redesign_secondary_text</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.Redesign.Label" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/redesign_text_size_label</item>
+        <item name="android:textColor">@color/redesign_primary_text</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.Redesign.Description" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/redesign_text_size_description</item>
+        <item name="android:textColor">@color/redesign_secondary_text</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+</resources>

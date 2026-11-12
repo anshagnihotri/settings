@@ -20,20 +20,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/settings_homepage_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/redesign_main_background">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/main_content_scrollable_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.android.settings.widget.HomepageAppBarScrollingViewBehavior">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/homepage_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-8dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="32dp"
+            android:paddingBottom="120dp">
+
+            <TextView
+                android:id="@+id/settings_homepage_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                style="@style/TextAppearance.Redesign.Heading" />
 
             <FrameLayout
                 android:id="@+id/suggestion_content"
@@ -58,26 +68,27 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
+    <!-- Floating Search Action -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/redesign_search_fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="103dp"
+        app:backgroundTint="@color/redesign_floating_surface"
+        app:tint="@color/redesign_primary_text"
+        app:srcCompat="@drawable/ic_homepage_search"
         app:elevation="0dp"
-        android:touchscreenBlocksFocus="false"
-        android:keyboardNavigationCluster="false">
-        <LinearLayout
-            android:id="@+id/app_bar_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="@dimen/search_bar_container_top_padding"
-            android:paddingBottom="@dimen/settingslib_expressive_space_extrasmall4"
-            android:paddingStart="?android:attr/listPreferredItemPaddingStart"
-            android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
-            android:background="?android:attr/colorBackground">
+        app:borderWidth="0dp"
+        app:fabCustomSize="@dimen/redesign_search_button_size"
+        app:maxImageSize="24dp" />
 
-            <include layout="@layout/search_bar"/>
+    <!-- Kept for compatibility if code looks for it -->
+    <FrameLayout
+        android:id="@+id/app_bar_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
 
-        </LinearLayout>
-    </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

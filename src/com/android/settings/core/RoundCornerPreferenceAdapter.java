@@ -122,34 +122,18 @@ public class RoundCornerPreferenceAdapter extends PreferenceGroupAdapter {
 
         if (((CornerType & ROUND_CORNER_TOP) != 0) && ((CornerType & ROUND_CORNER_BOTTOM) == 0)) {
             // the first
-            return isSelected
-                    ? SettingsThemeHelper.isExpressiveTheme(mPreferenceGroup.getContext())
-                            ? R.drawable.settingslib_round_background_top_selected
-                            : com.android.settings.R.drawable.round_background_top_selected
-                    : R.drawable.settingslib_round_background_top;
+            return com.android.settings.R.drawable.redesign_round_background_top;
         } else if (((CornerType & ROUND_CORNER_BOTTOM) != 0)
                 && ((CornerType & ROUND_CORNER_TOP) == 0)) {
             // the last
-            return isSelected
-                    ? SettingsThemeHelper.isExpressiveTheme(mPreferenceGroup.getContext())
-                            ? R.drawable.settingslib_round_background_bottom_selected
-                            : com.android.settings.R.drawable.round_background_bottom_selected
-                    : R.drawable.settingslib_round_background_bottom;
+            return com.android.settings.R.drawable.redesign_round_background_bottom;
         } else if (((CornerType & ROUND_CORNER_TOP) != 0)
                 && ((CornerType & ROUND_CORNER_BOTTOM) != 0)) {
             // the only one preference
-            return isSelected
-                    ? SettingsThemeHelper.isExpressiveTheme(mPreferenceGroup.getContext())
-                            ? R.drawable.settingslib_round_background_selected
-                            : com.android.settings.R.drawable.round_background_selected
-                    : R.drawable.settingslib_round_background;
+            return com.android.settings.R.drawable.redesign_round_background_single;
         } else {
             // in the center
-            return isSelected
-                    ? SettingsThemeHelper.isExpressiveTheme(mPreferenceGroup.getContext())
-                            ? R.drawable.settingslib_round_background_center_selected
-                            : com.android.settings.R.drawable.round_background_center_selected
-                    : R.drawable.settingslib_round_background_center;
+            return com.android.settings.R.drawable.redesign_round_background_center;
         }
     }
 

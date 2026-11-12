@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="redesign_main_background">#0D0D0F</color>
+    <color name="redesign_primary_surface">#201F24</color>
+    <color name="redesign_floating_surface">#27262B</color>
+    <color name="redesign_primary_text">#FFFFFF</color>
+    <color name="redesign_secondary_text">#A3A2A6</color>
+    <color name="redesign_divider">#313033</color>
+    <color name="redesign_disabled_text">#77767B</color>
+    <color name="redesign_disabled_icon">#77767B</color>
+</resources>

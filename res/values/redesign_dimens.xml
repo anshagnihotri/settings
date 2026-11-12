@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="redesign_horizontal_screen_margin">16dp</dimen>
+    <dimen name="redesign_group_vertical_spacing">16dp</dimen>
+    <dimen name="redesign_row_height">58dp</dimen>
+    <dimen name="redesign_group_corner_radius">28dp</dimen>
+    <dimen name="redesign_profile_card_radius">27dp</dimen>
+    <dimen name="redesign_profile_image_size">40dp</dimen>
+    <dimen name="redesign_icon_size">22dp</dimen>
+    <dimen name="redesign_icon_to_text_gap">14dp</dimen>
+    <dimen name="redesign_search_button_size">70dp</dimen>
+    
+    <dimen name="redesign_text_size_heading">22sp</dimen>
+    <dimen name="redesign_text_size_profile_name">19sp</dimen>
+    <dimen name="redesign_text_size_profile_secondary">16sp</dimen>
+    <dimen name="redesign_text_size_label">18sp</dimen>
+    <dimen name="redesign_text_size_description">14sp</dimen>
+    
+    <dimen name="redesign_divider_height">1dp</dimen>
+    <dimen name="redesign_row_horizontal_padding">24dp</dimen>
+</resources>
